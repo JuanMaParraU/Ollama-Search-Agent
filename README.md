@@ -176,6 +176,19 @@ This prompt encourages the LLM to think step-by-step, calling tools when appropr
 
 ---
 
+## 🧪 Example Output
+
+```
+🔧 Tool: duckduckgo_search | Args: {'__arg1': 'best telecom operator in UK'}
+Tool Results: [ToolMessage(...)]
+The next node is: llm
+...
+🧠 Final response from the agent:
+"Based on recent results, the top telecom operator in the UK is..."
+```
+
+---
+
 ## ✏️ How to Update the Prompts
 
 1. Open the `prompt = """..."""` block.
@@ -189,19 +202,6 @@ prompt = """You are a legal research assistant. Search for the latest regulatory
 ```
 
 Also, adjust the `SystemMessage(content=self.system)` injection inside `Agent.call_model()` for context-aware runs.
-
----
-
-## 🧪 Example Output
-
-```
-🔧 Tool: duckduckgo_search | Args: {'__arg1': 'best telecom operator in UK'}
-Tool Results: [ToolMessage(...)]
-The next node is: llm
-...
-🧠 Final response from the agent:
-"Based on recent results, the top telecom operator in the UK is..."
-```
 
 ---
 
