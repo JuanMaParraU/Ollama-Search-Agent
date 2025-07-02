@@ -13,12 +13,11 @@ Basic Requirements
 - **Python 3.10+**
 - **Git**
 
-Clone this repo:
+#### Clone this repo:
 ```bash
 git clone git@github.com:JuanMaParraU/Ollama-Search-Agent.git
 ```
 
-Create a Python environment:
 #### Create a virtual environment
 ```bash
 python -m venv myenv
@@ -34,7 +33,7 @@ On Windows:
 myenv\Scripts\activate
 ````
 
-Install the required packages:
+#### Install the required packages:
 
 ```bash
 pip install langgraph langchain langchain-community langchain-core langchain-ollama duckduckgo-search
