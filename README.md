@@ -184,9 +184,9 @@ This prompt encourages the LLM to think step-by-step, calling tools when appropr
 
 For example:
 
-\`\`\`python
+```python
 prompt = """You are a legal research assistant. Search for the latest regulatory updates..."""
-\`\`\`
+```
 
 Also, adjust the `SystemMessage(content=self.system)` injection inside `Agent.call_model()` for context-aware runs.
 
