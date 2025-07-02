@@ -19,11 +19,11 @@ git clone git@github.com:JuanMaParraU/Ollama-Search-Agent.git
 ```
 
 Create a Python environment:
-### 1. Create a virtual environment
+#### Create a virtual environment
 ```bash
 python -m venv myenv
 ```
-### 2. Activate the environment
+#### Activate the environment
 On macOS/Linux:
 ```bash
 source myenv/bin/activate
@@ -41,7 +41,6 @@ pip install langgraph langchain langchain-community langchain-core langchain-oll
 ```
 
 Also required
-- **Python 3.10+**
 - **Ollama** (local LLM server)
 
 ---
