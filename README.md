@@ -168,9 +168,9 @@ What is the best telecom operator in the UK? How many branches does it have?
 
 Located near the bottom:
 
-\`\`\`python
-prompt = """You are a smart research assistant. Use the search engine to look up information..."""
-\`\`\`
+```python
+system_prompt = """You are a smart research assistant. Use the search engine to look up information..."""
+```
 
 This prompt encourages the LLM to think step-by-step, calling tools when appropriate.
 
