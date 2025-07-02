@@ -3,7 +3,7 @@
 
 This project demonstrates a **REACT-style AI research assistant** built with **LangGraph**, **LangChain**, and **Ollama**. The agent is capable of reasoning over user input, calling real-time tools like **DuckDuckGo Search**, and maintaining conversational state across turns.
 
-It uses a **looping LLM-agent pattern** where the LLM decides when to use tools, collects information, and responds after reasoning over the results.
+It uses a **looping LLM-agent pattern** where the LLM decides when to use tools, collects information, and responds after reasoning over the results. This code has been adapted from the course **AI Agents in LangGraph** from [DeepLearning.AI](https://learn.deeplearning.ai/courses/ai-agents-in-langgraph/lesson/qyrpc/introduction).
 
 ---
 
@@ -184,4 +184,4 @@ The next node is: llm
 
 ## 🧾 License
 
-MIT License
+Apache 2.0 
