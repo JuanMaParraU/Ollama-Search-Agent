@@ -38,6 +38,11 @@ myenv\Scripts\activate
 ```bash
 pip install langgraph langchain langchain-community langchain-core langchain-ollama duckduckgo-search
 ```
+or 
+
+```bash
+pip install -r requirements.txt
+```
 
 Also required
 - **Ollama** (local LLM server)
@@ -79,7 +84,7 @@ User Query
    ↓
 [HumanMessage]
    ↓
-[llm Node] ──▶ Model (Ollama)
+[llm Node] ──▶ Model (Ollama: Mistral-nemo)
    │            │
    │         ┌──┴────────────┐
    │         │Tool Call(s)?  │
@@ -132,7 +137,7 @@ You can inspect the tool arguments before confirming, offering a clear **"human-
 After setting up dependencies and Ollama, run the script directly:
 
 ```bash
-python your_script.py
+python ollama_search_agent.py
 ```
 
 You’ll be prompted whether to continue each loop (i.e., tool invocation and model reasoning). This enables step-by-step exploration.
