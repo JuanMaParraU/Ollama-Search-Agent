@@ -7,7 +7,32 @@ It uses a **looping LLM-agent pattern** where the LLM decides when to use tools,
 
 ---
 
-## 📦 Dependencies
+## 📦 Requirements and Dependencies
+
+Basic Requirements
+- **Python 3.10+**
+- **Git**
+
+Clone this repo:
+```bash
+git clone git@github.com:JuanMaParraU/Ollama-Search-Agent.git
+```
+
+Create a Python environment:
+### 1. Create a virtual environment
+```bash
+python -m venv myenv
+```
+### 2. Activate the environment
+On macOS/Linux:
+```bash
+source myenv/bin/activate
+```
+
+On Windows:
+```bash
+myenv\Scripts\activate
+````
 
 Install the required packages:
 
@@ -15,7 +40,7 @@ Install the required packages:
 pip install langgraph langchain langchain-community langchain-core langchain-ollama duckduckgo-search
 ```
 
-Also required:
+Also required
 - **Python 3.10+**
 - **Ollama** (local LLM server)
 
