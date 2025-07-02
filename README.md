@@ -179,6 +179,17 @@ system_prompt = """You are a smart research assistant. Use the search engine to 
 
 This prompt encourages the LLM to think step-by-step, calling tools when appropriate.
 
+### 5. **Memory and Threading**
+
+- **Memory (`MemorySaver`)** is used to store agent state (specifically the list of exchanged messages) between graph steps.
+This memory enables long-running or multi-turn interactions by retaining message history.
+The `AgentState` includes all messages, and `reduce_messages` ensures proper merging and deduplication.
+- **Threading** (`thread_id`) allows isolated execution of multiple conversations or sessions in parallel.
+Each thread has its own state, maintained independently in memory.
+Together, memory and threading make the system robust, resumable, and multi-session capable.
+
+*More details in the final section*
+
 ---
 
 ## 🧪 Example Output
@@ -207,6 +218,58 @@ prompt = """You are a legal research assistant. Search for the latest regulatory
 ```
 
 Also, adjust the `SystemMessage(content=self.system)` injection inside `Agent.call_model()` for context-aware runs.
+
+---
+## About Memory 
+
+### 🧠 Memory: State Checkpointing
+
+We use `MemorySaver` from `langgraph.checkpoint.memory` to **store the state of the agent between node executions**.
+
+```python
+from langgraph.checkpoint.memory import MemorySaver
+
+memory = MemorySaver()
+```
+
+- **Purpose:** Captures the evolving list of messages (user input, AI response, tool outputs).
+- **Usage:** Passed to the agent's graph compiler as a `checkpointer`.
+- **Behavior:** Enables tracking of message history across multiple reasoning steps or tool invocations.
+- **Alternative:** Can be replaced with persistent storage (e.g., `SqliteSaver`) for long-running or recoverable sessions.
+
+The `AgentState` defines the structure of what’s stored:
+
+```python
+class AgentState(TypedDict):
+    messages: Annotated[list[AnyMessage], reduce_messages]
+```
+
+---
+
+### 🧵 Threading: Parallel or Isolated Conversations
+
+LangGraph allows the execution of separate conversational flows using **thread IDs**. Each thread represents a distinct, isolated state history.
+
+```python
+thread = {"configurable": {"thread_id": "1"}}
+```
+
+- **Purpose:** Distinguishes one conversation or task from another.
+- **Usage:** Passed to every graph call (e.g., `graph.stream(state, thread)`).
+- **Benefit:** Enables multiple users or sessions to be handled concurrently, with clean separation of memory/state per thread.
+
+---
+
+### 🔁 How Memory & Threading Work Together
+
+| Feature       | Description                                              |
+|---------------|----------------------------------------------------------|
+| `MemorySaver` | Stores the evolving agent state between graph nodes.     |
+| `thread_id`   | Isolates different conversations in memory.              |
+| `AgentState`  | Defines the content tracked in memory (e.g., messages).  |
+| `reduce_messages` | Merges new and old messages while avoiding duplicates. |
+
+Each `thread_id` maintains its own version of `AgentState`, saved and resumed by the `MemorySaver`.
 
 ---
 
