@@ -5,3 +5,4 @@ langchain-core
 langchain-ollama 
 duckduckgo-search
 ollama
+langchain-mcp-adapters

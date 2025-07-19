@@ -181,7 +181,7 @@ This prompt encourages the LLM to think step-by-step, calling tools when appropr
 
 ### 5. **Memory and Threading**
 
-- **Memory (`MemorySaver`)** is used to store agent state (specifically the list of exchanged messages) between graph steps.
+- **Memory** (`MemorySaver`) is used to store agent state (specifically the list of exchanged messages) between graph steps.
 This memory enables long-running or multi-turn interactions by retaining message history.
 The `AgentState` includes all messages, and `reduce_messages` ensures proper merging and deduplication.
 - **Threading** (`thread_id`) allows isolated execution of multiple conversations or sessions in parallel.
@@ -272,6 +272,10 @@ thread = {"configurable": {"thread_id": "1"}}
 Each `thread_id` maintains its own version of `AgentState`, saved and resumed by the `MemorySaver`.
 
 ---
+# ‼️ Known limitations
+DuckDuckGo does not officially provide a public API. Many third-party tools or wrappers (e.g. duckduckgo_search in Python) scrape the Lite or HTML version. This wrapper scrapes DuckDuckGo's HTML results, which aren't meant for programmatic use, and DuckDuckGo rate-limits or blocks automated queries after a small number of requests.
+
+For more stable and reproduceble results use subscription-based solutions such Tavily, SerAPI, Brave, etc. 
 
 ## 🧾 License
 
