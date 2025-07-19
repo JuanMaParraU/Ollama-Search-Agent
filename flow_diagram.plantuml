@@ -1,0 +1,44 @@
+@startuml
+start
+
+:User inputs query;
+:Initialize messages with user query;
+
+partition AgentLoop {
+    :Add system prompt (if any);
+    :Call LLM with messages;
+    :Receive LLM response;
+
+    if (LLM response contains tool calls?) then (yes)
+        :For each tool call;
+        if (Tool exists?) then (yes)
+            :Invoke tool with args;
+            if (Tool invocation successful?) then (yes)
+                :Collect tool response;
+            else (no)
+                if (Tool == duckduckgo_search?) then (yes)
+                    :Fallback to wikipedia_search;
+                    :Rewrite query with LLM;
+                    :Invoke wikipedia_search with rewritten query;
+                    if (Wikipedia call successful?) then (yes)
+                        :Collect Wikipedia response;
+                    else (no)
+                        :Report fallback failure;
+                    endif
+                else (no)
+                    :Report tool failure;
+                endif
+            endif
+        else (no)
+            :Report invalid tool;
+        endif
+    else (no)
+        :No tool calls - end loop;
+    endif
+
+    :Append tool results to messages;
+    :Loop back to call LLM;
+}
+
+stop
+@enduml
