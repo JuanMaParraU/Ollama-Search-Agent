@@ -73,7 +73,7 @@ async def main():
                                 tools, 
                                 debug=False,
                                 prompt=system_prompt, 
-                                interrupt_after=["tools"],
+                                interrupt_before=["tools"],
                                 checkpointer=memory)
     query = "What is the best telecom operator in the UK? How many branches does it have?"
     response = await agent.ainvoke({"messages": query}, config=config)
@@ -83,14 +83,9 @@ async def main():
     last_messages = state.values.get('messages', [])[-3:] 
     print("\n🔍 Last Messages:")
     for msg in last_messages:
-        if isinstance(msg, AIMessage):
-            print("\n📢 AI Response:", msg.content)
-        elif isinstance(msg, ToolMessage):
-            print("🔗 Tool message:", msg.content)
-        elif isinstance(msg, dict) and 'content' in msg:
-            print("🔗 Tool message:", msg['content'])
-        else:
-            print("Unknown message type:", msg)
+        if isinstance(msg, ToolMessage):
+            print("\n Tool Response:", msg.content)
+
     for msg in response['messages']:
         if isinstance(msg, AIMessage):
             print("\n📢 AI Response:", msg.content)

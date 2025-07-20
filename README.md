@@ -1,9 +1,12 @@
-
 # 🧠 LangGraph AI Agent with Ollama & DuckDuckGo Search
 
 This project demonstrates a **REACT-style AI research assistant** built with **LangGraph**, **LangChain**, and **Ollama**. The agent is capable of reasoning over user input, calling real-time tools like **DuckDuckGo Search**, and maintaining conversational state across turns.
 
 It uses a **looping LLM-agent pattern** where the LLM decides when to use tools, collects information, and responds after reasoning over the results. This code has been adapted from the course **AI Agents in LangGraph** from [DeepLearning.AI](https://learn.deeplearning.ai/courses/ai-agents-in-langgraph/lesson/qyrpc/introduction).
+
+
+**👨🏻‍💻 NEW: MCP implementation available!** See the [mcp folder](./mcp/) for the latest Model Context Protocol integration and examples.
+
 
 ---
 
@@ -279,4 +282,4 @@ For more stable and reproduceble results use subscription-based solutions such T
 
 ## 🧾 License
 
-Apache 2.0 
+Apache 2.0
