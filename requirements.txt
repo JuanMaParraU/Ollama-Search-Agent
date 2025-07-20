@@ -6,3 +6,6 @@ langchain-ollama
 duckduckgo-search
 ollama
 langchain-mcp-adapters
+mcp
+wikipedia-api
+websockets
