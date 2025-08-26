@@ -71,9 +71,9 @@ async def main():
     }
     agent = create_react_agent( model, 
                                 tools, 
-                                debug=False,
+                                debug=True,
                                 prompt=system_prompt, 
-                                interrupt_before=["tools"],
+                                interrupt_after=["tools"],
                                 checkpointer=memory)
     query = "What is the best telecom operator in the UK? How many branches does it have?"
     response = await agent.ainvoke({"messages": query}, config=config)
