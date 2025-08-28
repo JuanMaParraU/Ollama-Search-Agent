@@ -1,0 +1,41 @@
+_wandb:
+    value:
+        cli_version: 0.21.1
+        e:
+            b60ckqpbhyqas972lr0yag3l7mzr8zlk:
+                codePath: wandb_agent.py
+                codePathLocal: wandb_agent.py
+                email: jm.parraullauri@bristol.ac.uk
+                executable: /Users/te22204/git/Ollama-Search-Agent/myenv/bin/python3
+                git:
+                    commit: 94351b20767266be5070a89969448320d1dd6397
+                    remote: https://github.com/JuanMaParraU/Ollama-Search-Agent.git
+                host: MJPFWPXGYL
+                os: macOS-15.6.1-arm64-arm-64bit-Mach-O
+                program: /Users/te22204/git/Ollama-Search-Agent/wandb_agent.py
+                python: CPython 3.13.2
+                root: /Users/te22204/git/Ollama-Search-Agent
+                startedAt: "2025-08-28T16:09:32.636714Z"
+                writerId: b60ckqpbhyqas972lr0yag3l7mzr8zlk
+        m: []
+        python_version: 3.13.2
+        t:
+            "1":
+                - 105
+            "2":
+                - 105
+            "3":
+                - 13
+                - 16
+            "4": 3.13.2
+            "5": 0.21.1
+            "9":
+                "2": langchain
+            "12": 0.21.1
+            "13": darwin-arm64
+framework:
+    value: langgraph
+model:
+    value: mistral-nemo
+temperature:
+    value: 0

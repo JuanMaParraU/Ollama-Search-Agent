@@ -1,0 +1,57 @@
+_wandb:
+    value:
+        cli_version: 0.21.1
+        e:
+            fdvoboaroswaqeyow6nbmiit6bcmyoc6:
+                apple:
+                    ecpuCores: 6
+                    gpuCores: 14
+                    memoryGb: 18
+                    name: Apple M3 Pro
+                    pcpuCores: 5
+                    ramTotalBytes: "19327352832"
+                    swapTotalBytes: "1073741824"
+                codePath: wandb_agent.py
+                codePathLocal: wandb_agent.py
+                cpu_count: 11
+                cpu_count_logical: 11
+                disk:
+                    /:
+                        total: "494384795648"
+                        used: "393634041856"
+                email: jm.parraullauri@bristol.ac.uk
+                executable: /Users/te22204/git/Ollama-Search-Agent/myenv/bin/python3
+                git:
+                    commit: 94351b20767266be5070a89969448320d1dd6397
+                    remote: https://github.com/JuanMaParraU/Ollama-Search-Agent.git
+                host: MJPFWPXGYL
+                memory:
+                    total: "19327352832"
+                os: macOS-15.6.1-arm64-arm-64bit-Mach-O
+                program: /Users/te22204/git/Ollama-Search-Agent/wandb_agent.py
+                python: CPython 3.13.2
+                root: /Users/te22204/git/Ollama-Search-Agent
+                startedAt: "2025-08-28T16:19:40.206445Z"
+                writerId: fdvoboaroswaqeyow6nbmiit6bcmyoc6
+        m: []
+        python_version: 3.13.2
+        t:
+            "1":
+                - 105
+            "2":
+                - 33
+                - 105
+            "3":
+                - 13
+                - 16
+                - 24
+            "4": 3.13.2
+            "5": 0.21.1
+            "12": 0.21.1
+            "13": darwin-arm64
+framework:
+    value: langgraph
+model:
+    value: mistral-nemo
+temperature:
+    value: 0
